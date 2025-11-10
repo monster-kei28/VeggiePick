@@ -81,6 +81,6 @@
 - **Render** - アプリケーションデプロイ
 
 ## 画面遷移図・ER図
-（今後追加予定）
+- **画面遷移図** - https://www.figma.com/design/EajOsneifjLNQSTf05mRt7/VeggiePick%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?node-id=0-1&t=lGn8nxHa6MJCkAJF-1
 
 **開発方針：** MVP版では「まず動く・使えること」を最優先にし、Railsの標準機能とカリキュラム習得済み技術を中心に構成。外部APIや複雑な機能は段階的に追加予定。
