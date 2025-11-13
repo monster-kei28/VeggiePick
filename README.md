@@ -79,6 +79,9 @@
 ### インフラ・デプロイ
 - **Render** - アプリケーションデプロイ
 
+### 開発環境
+- **Docker**
+
 ## 画面遷移図・ER図
 - **画面遷移図** - https://www.figma.com/design/EajOsneifjLNQSTf05mRt7/VeggiePick%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?node-id=0-1&t=lGn8nxHa6MJCkAJF-1
 - **ER図** -https://dbdiagram.io/d/Veggiepick-690a1ae66735e11170347499
