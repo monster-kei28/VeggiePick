@@ -16,8 +16,12 @@ services:
       - "3000:3000"
     depends_on:
       - db
+    #開発用
+    #environment:
+    #  DATABASE_URL: postgres://postgres:password@db:5432/myapp_development
+    #本番用
     environment:
-      DATABASE_URL: postgres://postgres:password@db:5432/myapp_development
+      DATABASE_URL: postgres://postgres:password@db:5432/myapp_production
     volumes:
       - .:/usr/src/app
       - bundle_cache:/usr/local/bundle
