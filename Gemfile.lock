@@ -137,13 +137,12 @@ GEM
       ast (~> 2.4.1)
       racc
     pg (1.6.2-aarch64-linux)
+    pg (1.6.2-arm64-darwin)
     prism (1.6.0)
     puma (5.6.9)
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (2.2.21)
-    rack-proxy (0.7.7)
-      rack
     rack-test (2.2.0)
       rack (>= 1.3)
     rails (7.0.10)
@@ -206,7 +205,6 @@ GEM
       sprockets-rails
       tilt
     securerandom (0.4.1)
-    semantic_range (3.1.0)
     spring (4.4.0)
     sprockets (4.2.2)
       concurrent-ruby (~> 1.0)
@@ -234,11 +232,6 @@ GEM
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
-    webpacker (5.4.4)
-      activesupport (>= 5.2)
-      rack-proxy (>= 0.6.1)
-      railties (>= 5.2)
-      semantic_range (>= 2.3.0)
     websocket-driver (0.8.0)
       base64
       websocket-extensions (>= 0.1.0)
@@ -247,6 +240,7 @@ GEM
 
 PLATFORMS
   aarch64-linux
+  arm64-darwin-24
 
 DEPENDENCIES
   bootsnap (>= 1.4.4)
@@ -262,7 +256,6 @@ DEPENDENCIES
   stimulus-rails
   turbo-rails
   web-console (>= 4.1.0)
-  webpacker (~> 5.0)
 
 RUBY VERSION
    ruby 3.1.0p0
