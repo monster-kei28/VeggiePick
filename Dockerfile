@@ -1,7 +1,7 @@
 FROM ruby:3.1.0
 
 # Node.jsとYarnのインストール（Rails 7のJavaScriptビルドに必要）
-RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - \
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
   && apt-get install -y nodejs
 
 RUN npm install --global yarn
