@@ -12,7 +12,6 @@ gem 'rubocop'
 gem 'sass-rails', '>= 6'
 gem 'stimulus-rails'
 gem 'turbo-rails'
-gem 'webpacker', '~> 5.0'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
