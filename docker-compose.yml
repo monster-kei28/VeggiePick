@@ -1,10 +1,12 @@
+version: '3.9'
+
 services:
   db:
     image: postgres:14
     environment:
-      POSTGRES_DB: myapp_development
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
       - db_data:/var/lib/postgresql/data
     ports:
@@ -16,12 +18,9 @@ services:
       - "3000:3000"
     depends_on:
       - db
-    #開発用
-    #environment:
-    #  DATABASE_URL: postgres://postgres:password@db:5432/myapp_development
-    #本番用
     environment:
-      DATABASE_URL: postgres://postgres:password@db:5432/myapp_production
+      RAILS_ENV: ${RAILS_ENV}
+      DATABASE_URL: ${DATABASE_URL}
     volumes:
       - .:/usr/src/app
       - bundle_cache:/usr/local/bundle
@@ -29,3 +28,13 @@ services:
 volumes:
   db_data:
   bundle_cache:
+
+#開発用
+#export $(cat .env.development)
+#docker compose up -d
+#docker compose exec web bash
+
+#本番用
+#export $(cat .env.production)
+#docker compose -f docker-compose.yml up -d
+#docker compose exec web bash
