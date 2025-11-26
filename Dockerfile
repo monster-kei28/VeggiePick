@@ -9,6 +9,8 @@ RUN npm install --global yarn
 # PostgreSQLクライアントのインストール
 RUN apt-get update -qq && apt-get install -y postgresql-client
 
+RUN bundle exec rails assets:precompile RAILS_ENV=production
+
 # 作業ディレクトリの設定
 WORKDIR /usr/src/app
 
