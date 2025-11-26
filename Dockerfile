@@ -1,28 +1,25 @@
 FROM ruby:3.1.0
 
-# Node.jsとYarnのインストール（Rails 7のJavaScriptビルドに必要）
+# Node.js と Yarn
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
   && apt-get install -y nodejs
-
 RUN npm install --global yarn
 
-# PostgreSQLクライアントのインストール
+# PostgreSQL client
 RUN apt-get update -qq && apt-get install -y postgresql-client
 
-RUN bundle exec rails assets:precompile RAILS_ENV=production
-
-# 作業ディレクトリの設定
+# 作業ディレクトリ
 WORKDIR /usr/src/app
 
-# GemfileをコピーしてGemをインストール
+# Gemfileをコピーして bundle install
 COPY Gemfile Gemfile.lock ./
 RUN bundle install
 
-# アプリケーションコードをコピー
+# アプリケーションコード
 COPY . .
 
-# ポート3000を公開
-EXPOSE 3000
+# assets:precompile（必要ならここで）
+# RUN bundle exec rails assets:precompile RAILS_ENV=production
 
-# サーバー起動コマンド
-CMD ["rails", "server", "-b", "0.0.0.0", "-p", "${PORT}"]
+# Rails を Render のポートで起動
+CMD ["sh", "-c", "rails server -b 0.0.0.0 -p ${PORT}"]
